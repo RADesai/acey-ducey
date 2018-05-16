@@ -1,7 +1,9 @@
+import { SHUFFLE_DECK } from '../constants/Actions'
+
 const actions = {
-    actionDispatcher: (xyz) => ({
-        type: 'ACTION_TYPE',
-        payload: xyz
+    shuffleDeck: deck => ({
+        type: SHUFFLE_DECK,
+        payload: deck
     })
 };
 

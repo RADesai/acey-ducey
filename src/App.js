@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from './actions/actions';
+import Card from './components/Card';
 import './App.css';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           if the third card falls outside of the two other cards, the bettor must add what he bet to the pot;
           and if the third card matches the numerical value of one of the other two cards, the bettor must add to the pot double what he bet.
         </div>
+        <Card suit={ "Suit" } value={ "#" } />
       </div>
     );
   }
