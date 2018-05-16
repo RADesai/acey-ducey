@@ -1,0 +1,16 @@
+.card {
+    font-family: 'Bubblegum Sans';
+    background-color: #999;
+    height: 225px;
+    width: 150px;
+}
+
+.card-value {
+    font-size: 2em;
+    padding: 10px;
+}
+
+.card-suit {
+    font-size: 2.5em;
+    padding: 10px;
+}
