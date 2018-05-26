@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "./actions/actions";
 import Card from "./components/Card";
+import CARD_RED from "./utils/Card_Red.png";
+import CARD_BLACK from "./utils/Card_Black.png";
 import "./App.css";
 
 class App extends Component {
@@ -12,7 +14,6 @@ class App extends Component {
         <div className="app-title">Acey Deucy</div>
         <div className="app-description">
           <div className="app-description-title">How To Play</div>
-          <hr />
           <div className="app-description-body">
             Before the action, each player must add their ante into the pot. Two
             cards are then dealt face-up to one player. That player then bets
@@ -26,7 +27,8 @@ class App extends Component {
             bet.
           </div>
         </div>
-        <Card suit={"Suit"} value={"#"} />
+        <img src={CARD_BLACK} alt="playing-card" />
+        <img src={CARD_RED} alt="playing-card" />
       </div>
     );
   }

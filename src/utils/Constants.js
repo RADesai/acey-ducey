@@ -1,4 +1,6 @@
-export const deck = {
+export const SHUFFLE_DECK = "SHUFFLE_DECK";
+
+export const DECK = {
   HEARTS: [
     "2",
     "3",

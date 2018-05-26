@@ -2,18 +2,43 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 .app-title {
-  font-size: 4em;
-  font-family: 'Bubblegum Sans';
-  color: #111;
+  margin: 15px 0;
+  font-size: 48px;
+  font-family: "Bubblegum Sans";
+  color: #0c0000;
 }
 
 .app-description {
-  color: #222;
+  color: #0c0000;
   padding: 2% 8%;
   text-align: center;
 }
 
+.app-description-title {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.app-description-title::before {
+  width: 25%;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 2px;
+  border-radius: 20%;
+  background: linear-gradient(to right, #0c0000, transparent 85%);
+}
+
+.app-description-title::after {
+  width: 25%;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 2px;
+  border-radius: 20%;
+  background: linear-gradient(to left, #8b0023, transparent 85%);
+}

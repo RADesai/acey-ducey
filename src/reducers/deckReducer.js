@@ -1,12 +1,12 @@
-import { deck } from "../utils/Constants";
+import { DECK } from "../utils/Constants";
 
 const initialState = {
-  deck
+  DECK
 };
 
 const shuffle = deck => {
   // Randomly Shuffle the Deck
-  return deck;
+  return DECK;
 };
 
 export default function sampleReducer(state = initialState, action) {

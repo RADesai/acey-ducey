@@ -9,7 +9,6 @@ describe("Card Component", () => {
   };
   const wrapper = mount(<Card {...props} />);
   const cardComponent = wrapper.find(Card);
-
   it("should render <Card /> component", () => {
     expect(cardComponent.exists()).toEqual(true);
   });
