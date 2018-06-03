@@ -1,20 +1,28 @@
+// ACTIONS
+export const START_GAME = "START_GAME";
 export const SHUFFLE_DECK = "SHUFFLE_DECK";
+export const DRAW_HAND = "DRAW_HAND";
+export const PASS = "PASS";
+export const BET = "BET";
 
+// Game Consts
 export const CARD_VALUES = {
-  "2": 2,
-  "3": 3,
-  "4": 4,
-  "5": 5,
-  "6": 6,
-  "7": 7,
-  "8": 8,
-  "9": 9,
-  "10": 10,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+  10: 10,
   J: 10,
   K: 10,
   Q: 10,
-  A: 11 // TODO: how to handle high v low?
+  A: 11 // TODO: Ace-LOW v Ace-HIGH
 };
+
+export const HOUSE_CHIPS_200 = 200;
 
 export const DECK = [
   "2",

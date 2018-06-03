@@ -35,7 +35,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  const { deck } = state.deckReducer;
+  const { deck } = state.gameReducer;
   return { deck };
 }
 

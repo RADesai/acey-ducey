@@ -1,6 +1,41 @@
 import R from "ramda";
+import { CARD_VALUES } from "./Constants";
+/*
+  This is where the logic that powers the game will live:
+  *__TODO__*
+    - sort hand array so left card is always lower one
+    - BET and PASS actions
+      BET: -> play 1 card, isWinningHand?
+        Bet up to POT
+        Hand result
+        warning of double loss*MVP2
+        Win/Loss Payout
+        Animate chip count
+      PASS:
+        Skip hand
+        POT grows
+    - Next hand, repeat...
+
+  *__MVP2__*
+    Shuffle deck option
+    Share chip count to social media
+    Play until quit - 'Are You Sure? You have xXx tokens!'
+    Add mercy tokens at low count
+*/
 
 const drawCard = deck => deck.shift();
+
+// const isPlayableHand = (hand) => // can the hand be played - cards within 1?
+
+const isWinningHand = hand => {
+  // find higher card
+  const ceilingCard = "";
+  // find lower card
+  const floorCard = "";
+  // return if drawn card is BOTH
+  // less than high card
+  // greater than low card
+};
 
 export default {
   drawCard
