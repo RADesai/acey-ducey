@@ -14,12 +14,6 @@ describe('actions', () => {
         };
         expect(actions.shuffleDeck()).toEqual(expectedAction);
     });
-    it('DRAW_HAND: should create an action to draw a hand from the deck', () => {
-        const expectedAction = {
-            type: DRAW_HAND
-        };
-        expect(actions.drawHand()).toEqual(expectedAction);
-    });
     it('BET: should create an action to place the given bet', () => {
         const expectedAction = {
             type: BET,

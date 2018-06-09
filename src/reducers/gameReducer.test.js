@@ -28,7 +28,7 @@ describe('gameReducer', () => {
             },
             inPlay: true // state update for user option to BET || PASS
         });
-    }); // TODO: extract the spec out to its own 'it'
+    });
     it('SHUFFLE_DECK -> should shuffle the deck', () => {
         const SHUFFLE_DECK = {
             type: 'SHUFFLE_DECK'
@@ -37,18 +37,6 @@ describe('gameReducer', () => {
             //TODO: look into how to test randomness
             ...initialState,
             deck: expect.arrayContaining(DECK)
-        });
-    });
-    it('DRAW_HAND -> should draw a hand from the deck', () => {
-        const DRAW_HAND = {
-            type: 'DRAW_HAND'
-        };
-        expect(gameReducer(undefined, DRAW_HAND)).toEqual({
-            ...initialState, // how is this working? deck is losing 2 cards
-            hand: {
-                low: '2',
-                high: '3'
-            }
         });
     });
 });

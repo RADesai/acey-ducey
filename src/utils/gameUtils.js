@@ -1,5 +1,5 @@
-import R from "ramda";
-import { CARD_VALUES } from "./Constants";
+import * as R from 'ramda';
+import { CARD_VALUES } from './Constants';
 /*
   This is where the logic that powers the game will live:
   *__TODO__*
@@ -25,18 +25,32 @@ import { CARD_VALUES } from "./Constants";
 
 const drawCard = deck => deck.shift();
 
-// const isPlayableHand = (hand) => // can the hand be played - cards within 1?
+const getSortedHand = drawnHand => {
+    const [first, second] = drawnHand;
+    const isFirstGreaterThanSecond = R.gt(
+        CARD_VALUES[first],
+        CARD_VALUES[second]
+    );
+    return {
+        high: isFirstGreaterThanSecond ? first : second,
+        low: isFirstGreaterThanSecond ? second : first
+    };
+};
+
+const isPlayableHand = hand => {
+    // can the hand be played - cards within 1?
+    const difference = CARD_VALUES[hand.high] - CARD_VALUES[hand.low];
+    return difference !== 0 && difference !== 1;
+};
 
 const isWinningHand = hand => {
-  // find higher card
-  const ceilingCard = "";
-  // find lower card
-  const floorCard = "";
-  // return if drawn card is BOTH
-  // less than high card
-  // greater than low card
+    // return true if drawn card is BOTH
+    // less than high card
+    // greater than low card
 };
 
 export default {
-  drawCard
+    drawCard,
+    getSortedHand,
+    isPlayableHand
 };

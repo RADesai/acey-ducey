@@ -21,48 +21,38 @@ const shuffle = deck =>
         .map(a => a[1]);
 
 const getSortedHand = drawnHand => {
-    // const first = drawnHand[0];
-    // const second = drawnHand[1];
     const [first, second] = drawnHand;
     const isFirstGreaterThanSecond = R.gt(first, second);
-    console.log('First > Second ', isFirstGreaterThanSecond);
-
     const sortedHand = {
         high: isFirstGreaterThanSecond ? first : second,
         low: isFirstGreaterThanSecond ? second : first
     };
 
-    console.log('Sorted Hand:', sortedHand);
-
     return sortedHand;
 };
 
-const dealHand = deck => {
-    let virtualDeck = deck.slice();
+const dealHand = currentDeck => {
+    let virtualDeck = currentDeck.slice();
     const drawnHand = virtualDeck.splice(0, 2);
-    // const remainingDeck = virtualDeck;
-
-    const sortedHand = getSortedHand(drawnHand);
-    console.log('test?', sortedHand);
 
     return {
         inPlay: true,
-        deck: virtualDeck, // validate that we update the deck and hand correctly
-        hand: sortedHand
+        deck: virtualDeck,
+        hand: { ...getSortedHand(drawnHand) }
     };
 };
 
 export default function gameReducer(state = initialState, action) {
     switch (action.type) {
+        case DEAL:
+            return {
+                ...initialState,
+                ...dealHand(state.deck ? state.deck : DECK)
+            };
         case SHUFFLE_DECK:
             return {
                 ...state,
                 deck: shuffle(state.deck ? state.deck : DECK)
-            };
-        case DEAL:
-            return {
-                chips: state.chips,
-                ...dealHand(state.deck ? state.deck : DECK)
             };
         default:
             return state;
