@@ -38,19 +38,19 @@ const getSortedHand = drawnHand => {
 };
 
 const isPlayableHand = hand => {
-    // can the hand be played - cards within 1?
     const difference = CARD_VALUES[hand.high] - CARD_VALUES[hand.low];
     return difference !== 0 && difference !== 1;
 };
 
-const isWinningHand = hand => {
-    // return true if drawn card is BOTH
-    // less than high card
-    // greater than low card
-};
+const isWinningHand = hand =>
+    R.and(
+        R.gt(CARD_VALUES[hand.play], CARD_VALUES[hand.low]),
+        R.lt(CARD_VALUES[hand.play], CARD_VALUES[hand.high])
+    );
 
 export default {
     drawCard,
     getSortedHand,
-    isPlayableHand
+    isPlayableHand,
+    isWinningHand
 };

@@ -21,7 +21,7 @@ export const CARD_VALUES = {
     A: 11 // TODO: Ace-LOW v Ace-HIGH
 };
 
-export const HOUSE_CHIPS_200 = 200;
+export const HOUSE_CHIPS_200 = 200; // TODO: have default ante also?
 
 export const DECK = [
     '2',

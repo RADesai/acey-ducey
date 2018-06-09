@@ -38,18 +38,18 @@ describe('gameUtils', () => {
     });
     it('isWinningHand -> should return true when the hand is won', () => {
         const currentHand = {
-            first: 'K',
-            second: '3',
+            high: 'K',
+            low: '4',
             play: '5'
         };
-        //   expect(gameUtils.isWinningHand(currentHand)).toEqual(false);
+        expect(gameUtils.isWinningHand(currentHand)).toEqual(true);
     });
     it('isWinningHand -> should return false when the hand is lost', () => {
         const currentHand = {
-            first: 'K',
-            second: '3',
+            high: 'K',
+            low: '4',
             play: '2'
         };
-        //   expect(gameUtils.isWinningHand(currentHand)).toEqual(true);
+        expect(gameUtils.isWinningHand(currentHand)).toEqual(false);
     });
 });

@@ -11,6 +11,7 @@ import gameUtils from '../utils/gameUtils';
 const initialState = {
     deck: DECK,
     chips: HOUSE_CHIPS_200,
+    inPlay: false,
     hand: {}
 };
 
@@ -20,25 +21,16 @@ const shuffle = deck =>
         .sort((a, b) => a[0] - b[0])
         .map(a => a[1]);
 
-const getSortedHand = drawnHand => {
-    const [first, second] = drawnHand;
-    const isFirstGreaterThanSecond = R.gt(first, second);
-    const sortedHand = {
-        high: isFirstGreaterThanSecond ? first : second,
-        low: isFirstGreaterThanSecond ? second : first
-    };
-
-    return sortedHand;
-};
-
 const dealHand = currentDeck => {
-    let virtualDeck = currentDeck.slice();
-    const drawnHand = virtualDeck.splice(0, 2);
-
+    let virtualDeck = currentDeck.slice(); // extract to method to 'copy' deck?
+    const drawnHand = [
+        gameUtils.drawCard(virtualDeck),
+        gameUtils.drawCard(virtualDeck)
+    ];
     return {
         inPlay: true,
         deck: virtualDeck,
-        hand: { ...getSortedHand(drawnHand) }
+        hand: { ...gameUtils.getSortedHand(drawnHand) }
     };
 };
 

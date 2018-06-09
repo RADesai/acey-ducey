@@ -4,7 +4,8 @@ import gameReducer from './gameReducer';
 const initialState = {
     deck: DECK,
     chips: HOUSE_CHIPS_200,
-    hand: {}
+    hand: {},
+    inPlay: false
 };
 
 describe('gameReducer', () => {
@@ -12,7 +13,8 @@ describe('gameReducer', () => {
         expect(gameReducer(undefined, {})).toEqual({
             chips: 200,
             deck: DECK,
-            hand: {}
+            hand: {},
+            inPlay: false
         });
     });
     it('DEAL -> should deal first 2 cards from deck to the hand, update playing state', () => {

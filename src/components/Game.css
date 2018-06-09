@@ -1,0 +1,11 @@
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inPlay-indicator {
+    height: 10px;
+    width: 10px;
+    border-radius: 15px;
+    background-color: #ee3018;
+}
