@@ -1,11 +1,4 @@
-import {
-    SHUFFLE_DECK,
-    DECK,
-    HOUSE_CHIPS_200,
-    DRAW_CARD,
-    DEAL
-} from '../utils/Constants';
-import * as R from 'ramda';
+import { SHUFFLE_DECK, DECK, HOUSE_CHIPS_200, DEAL } from '../utils/Constants';
 import gameUtils from '../utils/gameUtils';
 
 const initialState = {
