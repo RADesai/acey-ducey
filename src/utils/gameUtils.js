@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { CARD_VALUES } from './Constants';
+import { CARDS } from './Constants';
 /*
   This is where the logic that powers the game will live:
   *__TODO__*
@@ -28,8 +28,8 @@ const drawCard = deck => deck.shift();
 const getSortedHand = drawnHand => {
     const [first, second] = drawnHand;
     const isFirstGreaterThanSecond = R.gt(
-        CARD_VALUES[first],
-        CARD_VALUES[second]
+        CARDS[first].value,
+        CARDS[second].value
     );
     return {
         high: isFirstGreaterThanSecond ? first : second,
@@ -38,14 +38,14 @@ const getSortedHand = drawnHand => {
 };
 
 const isPlayableHand = hand => {
-    const difference = CARD_VALUES[hand.high] - CARD_VALUES[hand.low];
+    const difference = CARDS[hand.high].value - CARDS[hand.low].value;
     return difference !== 0 && difference !== 1;
 };
 
 const isWinningHand = hand =>
     R.and(
-        R.gt(CARD_VALUES[hand.play], CARD_VALUES[hand.low]),
-        R.lt(CARD_VALUES[hand.play], CARD_VALUES[hand.high])
+        R.gt(CARDS[hand.play].value, CARDS[hand.low].value),
+        R.lt(CARDS[hand.play].value, CARDS[hand.high].value)
     );
 
 export default {

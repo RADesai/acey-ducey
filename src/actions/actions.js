@@ -1,4 +1,4 @@
-import { SHUFFLE_DECK, PASS, BET, DEAL } from '../utils/Constants';
+import { SHUFFLE_DECK, PASS, BET, PLAY_CARD, DEAL } from '../utils/Constants';
 
 const actions = {
     deal: () => ({
@@ -9,6 +9,9 @@ const actions = {
     }),
     pass: () => ({
         type: PASS
+    }),
+    playCard: betAmount => ({
+        type: PLAY_CARD
     }),
     bet: betAmount => ({
         type: BET,

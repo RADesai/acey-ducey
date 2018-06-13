@@ -1,6 +1,28 @@
-.game-container {
+.game {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    border: 1px solid black;
+}
+
+.box-1 {
+    /* flex: 2; */
+    /* width: 30%; */
+}
+.box-2 {
+    flex: 2;
+}
+
+.box-left {
+    order: 1;
+}
+.box-center {
+    order: 2;
+}
+.box-right {
+    order: 3;
 }
 
 .inPlay-indicator {
